@@ -15,9 +15,9 @@ spring:
               args:
                 name: messageServiceBreaker
             - RewritePath=/test, /testSecour
-        - id: alphaService
-          uri: lb://ALPHA-SERVICE
+        - id: productService
+          uri: lb://PRODUCT-SERVICE
           predicates:
-            - Path=/alpha/**
+            - Path=/product/**
           filters:
             - StripPrefix=1
