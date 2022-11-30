@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: messageService
+          uri: lb://MESSAGE-SERVICE
+          predicates:
+            - Path=/message/**
+          filters:
+            - StripPrefix=1
+            - name: CircuitBreaker
+              args:
+                name: messageServiceBreaker
+            - RewritePath=/test, /testSecour
+        - id: alphaService
+          uri: lb://ALPHA-SERVICE
+          predicates:
+            - Path=/alpha/**
+          filters:
+            - StripPrefix=1
