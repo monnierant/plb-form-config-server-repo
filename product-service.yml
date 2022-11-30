@@ -1,20 +1,20 @@
 products: |
   {
-    "productList": [
-      {
-        "id": "1",
-        "name": "test1",
-        "price": "101"
-      },
-      {
-        "id": "2",
-        "name": "test2",
-        "price": "102"
-      },
-      {
-        "id": "3",
-        "name": "test3",
-        "price": "103"
-      }
-    ]
+      "productList": [
+          {
+              "id": 1,
+              "name": "test1",
+              "price": 101
+          },
+          {
+              "id": 2,
+              "name": "test2",
+              "price": 102
+          },
+          {
+              "id": 3,
+              "name": "test3",
+              "price": 103
+          }
+      ]
   }
