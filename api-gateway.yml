@@ -5,16 +5,16 @@ spring:
         locator:
           enabled: true
       routes:
-        - id: messageService
-          uri: lb://MESSAGE-SERVICE
-          predicates:
-            - Path=/message/**
-          filters:
-            - StripPrefix=1
-            - name: CircuitBreaker
-              args:
-                name: messageServiceBreaker
-            - RewritePath=/test, /testSecour
+        # - id: messageService
+        #   uri: lb://MESSAGE-SERVICE
+        #   predicates:
+        #     - Path=/message/**
+        #   filters:
+        #     - StripPrefix=1
+        #     - name: CircuitBreaker
+        #       args:
+        #         name: messageServiceBreaker
+        #     - RewritePath=/test, /testSecour
         - id: cartService
           uri: lb://CART-SERVICE
           predicates:
