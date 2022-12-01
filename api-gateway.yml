@@ -21,9 +21,17 @@ spring:
             - Path=/cart/**
           filters:
             - StripPrefix=1
+            - name: CircuitBreaker
+              args:
+                name: cartServiceBreaker
+            - RewritePath=/(.*), /fallback
         - id: productService
           uri: lb://PRODUCT-SERVICE
           predicates:
             - Path=/product/**
           filters:
             - StripPrefix=1
+            - name: CircuitBreaker
+              args:
+                name: productServiceBreaker
+            - RewritePath=/(.*), /fallback
